@@ -1,0 +1,60 @@
+<!-- drawable/background.xml -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="411dp"
+    android:height="731dp"
+    android:viewportWidth="411"
+    android:viewportHeight="731"
+    >
+
+    <group>
+
+        <clip-path
+            android:pathData="M0 0H411V731H0V0Z"
+            />
+
+        <group
+            android:translateX="0.402"
+            android:translateY="-0.94"
+            android:pivotX="205.5"
+            android:pivotY="365.5"
+            android:scaleX="4.559"
+            android:scaleY="3.607"
+            android:rotation="49.862"
+            >
+
+            <path
+                android:pathData="M0 0V731H411V0"
+                >
+
+                <aapt:attr name="android:fillColor">
+
+                    <gradient
+                        android:type="radial"
+                        android:centerX="205.5"
+                        android:centerY="365.5"
+                        android:gradientRadius="102.75"
+                        >
+
+                        <item
+                            android:color="#000425"
+                            android:offset="0.746"
+                            />
+
+                        <item
+                            android:color="#052C4E"
+                            android:offset="1"
+                            />
+
+                    </gradient>
+
+                </aapt:attr>
+
+            </path>
+
+        </group>
+
+    </group>
+
+</vector>
