@@ -8,6 +8,14 @@
     android:background="@color/colorPrimary"
     tools:context=".LoginPage">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/stars"
+        android:src="@drawable/stars"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +33,7 @@
             android:layout_marginTop="48dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:background="@drawable/svg_loginpagetitle"/>
+            android:background="@drawable/svg_loginpage_title"/>
 
 
     </android.support.constraint.ConstraintLayout>
