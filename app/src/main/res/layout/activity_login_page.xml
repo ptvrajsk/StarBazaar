@@ -52,8 +52,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/userButton"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
             android:layout_marginBottom="40dp"
             app:layout_constraintTop_toTopOf="@id/loginPageButtons"
             app:layout_constraintBottom_toTopOf="@id/orgButton"/>
@@ -62,8 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/orgButton"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="@id/loginPageButtons"/>
 
