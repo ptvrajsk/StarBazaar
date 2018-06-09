@@ -54,5 +54,7 @@ public class LoginPage extends AppCompatActivity {
         animationFadeOut.setAnimationListener(animationListener);
         stars.startAnimation(animationFadeIn);
 
+        Button bytf;
+
     }
 }
