@@ -1,6 +1,7 @@
 package com.android.sonsofpitches.starbazaar;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,9 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.app.Activity;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
-import java.util.function.Consumer;
 
 
 /**
@@ -21,11 +21,11 @@ import java.util.function.Consumer;
 public class HeaderFragment extends Fragment {
 
     private static TextView headerText;
-    private static Button backButton;
+    private static ImageButton backButton;
     HeaderFragmentListener activityCommander;
 
     public interface HeaderFragmentListener {
-        public void setHeaderText(Consumer<String> setHeaderText);
+        public void setHeaderText(TextView headerText);
         public void revertToPreviousPage();
     }
 
@@ -47,28 +47,26 @@ public class HeaderFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-
+        //Make fragment become a view.
         View header = inflater.inflate(R.layout.header_fragment, container, false);
-        header.setBackgroundResource(R.drawable.svg_header_background);
-        backButton = (Button) header.findViewById(R.id.backButton);
+        header.setBackgroundResource(R.drawable.img_header_background);
+
+        //Set Button Resources and functions
+        backButton = (ImageButton) header.findViewById(R.id.backButton);
         backButton.setBackgroundResource(R.drawable.header_backbutton_background);
-        headerText = (TextView) header.findViewById(R.id.headerText);
-
-        Consumer<String> setHeaderText = new Consumer<String>() {
-            @Override
-            public void accept(String s) {
-                headerText.setText(s);
-            }
-        };
-
-        activityCommander.setHeaderText(setHeaderText);
-
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 activityCommander.revertToPreviousPage();
             }
         });
+
+        //Set header resources and functionality.
+        headerText = (TextView) header.findViewById(R.id.headerText);
+        Typeface quickSandFont = Typeface.createFromAsset(getActivity().getAssets(),
+                "fonts/font_quicksand_regular.ttf");
+        headerText.setTypeface(quickSandFont);
+        activityCommander.setHeaderText(headerText);
 
         return header;
     }
