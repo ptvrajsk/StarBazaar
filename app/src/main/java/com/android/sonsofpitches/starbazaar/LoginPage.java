@@ -1,8 +1,10 @@
 package com.android.sonsofpitches.starbazaar;
 
+import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -22,6 +24,14 @@ public class LoginPage extends AppCompatActivity {
 
         loginPageView.setBackgroundResource(R.drawable.svg_loginpage_background);
         userButton.setBackgroundResource(R.drawable.loginpage_userbutton_background);
+
+        userButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         orgButton.setBackgroundResource(R.drawable.loginpage_orgbutton_background);
 
         final ImageView stars = findViewById(R.id.stars);
