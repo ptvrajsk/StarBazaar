@@ -2,7 +2,13 @@
 
 Orbital 2018 Android Application.
 
-Documentation:
+Documentation: (Completed)
+	
+	LoginPage:
+
+		- Fully scripted with basic functionality (working buttons etc..)
+
+		- To link button to activities once other pages are complete.
 
 	HeaderFragment: (Custom header for the application)
 
@@ -16,3 +22,9 @@ Documentation:
 
 		- Adding the Fragment Widget to any activity.
 			All that needs to be done in the xml side is to implement the fragment widget, set the height to the specified value give in dimens.xml and width to match_parent.
+
+	IndividualShopDetails:
+
+		- Base scripting and functionality is complete. This activity is to be activated when the user clicks a particular shop that is participating in the event.
+
+		- Further functionality can only be implemented once other pages are done.
