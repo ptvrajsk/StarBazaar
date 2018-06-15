@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.EventLog;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,23 +18,29 @@ public class LoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
+
+        //Referencing Section
         ConstraintLayout loginPageView = findViewById(R.id.loginPage);
 
         Button userButton = findViewById(R.id.userButton);
         Button orgButton = findViewById(R.id.orgButton);
 
+        //Logic Section
         loginPageView.setBackgroundResource(R.drawable.svg_loginpage_background);
-        userButton.setBackgroundResource(R.drawable.loginpage_userbutton_background);
 
+        userButton.setBackgroundResource(R.drawable.loginpage_userbutton_background);
+        final Intent i = new Intent(this, EventsList.class);
         userButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(i);
+                finish();
             }
         });
 
         orgButton.setBackgroundResource(R.drawable.loginpage_orgbutton_background);
 
+        //Animation Section
         final ImageView stars = findViewById(R.id.stars);
         final Animation animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein);
         final Animation animationFadeOut = AnimationUtils.loadAnimation(this, R.anim.fadeout);
