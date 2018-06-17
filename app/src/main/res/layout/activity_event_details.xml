@@ -94,7 +94,6 @@
         android:layout_below="@+id/dateMarket"
         android:text="7.00 pm to 10.30 pm"
         android:textColor="black"/>
-
     <Button
         android:id="@+id/shop1"
         android:layout_width="match_parent"
@@ -102,7 +101,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="102dp"
-        android:text="SHOP !" />
+        android:text="SHOP 1"
+        android:onClick="onClickShop"/>
 
     <Button
         android:id="@+id/shop3"
@@ -120,6 +120,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-102dp"
         android:text="SHOP 2" />
-
-
 </RelativeLayout>
+
+
