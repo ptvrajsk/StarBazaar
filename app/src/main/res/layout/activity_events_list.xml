@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/eventsList"
     android:background="@color/colorPrimary"
     tools:context=".EventsList">
 
@@ -21,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/header_height"
+        android:padding="8dp"
         android:id="@+id/eventsListRecyclerView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

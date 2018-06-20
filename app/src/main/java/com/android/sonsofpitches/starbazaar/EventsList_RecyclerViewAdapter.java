@@ -33,7 +33,8 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
     @Override
     public void onBindViewHolder(@NonNull EventsList_ViewHolder holder, int position) {
 
-        
+        holder.eventLocation.setText(mData.get(position).getLocation());
+        holder.eventThumbnail.setImageResource(mData.get(position).getThumbnail());
 
     }
 

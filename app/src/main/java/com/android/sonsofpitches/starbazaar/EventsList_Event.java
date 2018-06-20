@@ -11,4 +11,11 @@ public class EventsList_Event {
     }
 
 
+    public String getLocation() {
+        return location;
+    }
+
+    public int getThumbnail() {
+        return thumbnail;
+    }
 }
