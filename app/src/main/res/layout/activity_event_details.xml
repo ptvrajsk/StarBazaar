@@ -30,8 +30,8 @@
         android:layout_marginBottom="158dp"
         android:layout_marginStart="20dp"
         android:text="Participating Shops "
-        android:textColor="Color.Black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textColor="#000000"/>
 
 
 
@@ -44,7 +44,7 @@
         android:layout_marginTop="84dp"
         android:text="Date :"
         android:textSize="18sp"
-        android:textColor="Color.Black"/>
+        android:textColor="#000000" />
 
     <EditText
         android:id="@+id/dateText"
@@ -54,7 +54,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="68dp"
         android:text="24/09/2018"
-        android:textColor="black" />
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/marketAddress"
@@ -64,8 +64,8 @@
         android:layout_alignStart="@+id/participatingShops"
         android:layout_marginTop="154dp"
         android:text="Address : "
-        android:textColor="Color.Black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textColor="#000000"/>
 
     <EditText
         android:id="@+id/addressText"
@@ -74,7 +74,7 @@
         android:layout_alignBaseline="@+id/marketAddress"
         android:layout_toEndOf="@+id/marketAddress"
         android:text="34 Bt Batok West Ave 5, Roadside"
-        android:textColor="black" />
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/timeMarket"
@@ -83,8 +83,8 @@
         android:layout_alignStart="@+id/participatingShops"
         android:layout_below="@+id/dateText"
         android:text="Time :"
-        android:textColor="Color.Black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textColor="#000000"/>
 
     <EditText
         android:id="@+id/timeText"
@@ -93,7 +93,7 @@
         android:layout_alignStart="@+id/dateText"
         android:layout_below="@+id/dateMarket"
         android:text="7.00 pm to 10.30 pm"
-        android:textColor="black"/>
+        android:textColor="#000000"/>
     <Button
         android:id="@+id/shop1"
         android:layout_width="match_parent"
@@ -102,7 +102,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="102dp"
         android:text="SHOP 1"
-        android:onClick="onClickShop"/>
+        android:onClick="onClickShop"
+        android:textColor="#000000"/>
 
     <Button
         android:id="@+id/shop3"
@@ -110,7 +111,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="SHOP 3" />
+        android:text="SHOP 3"
+        android:textColor="#000000"/>
 
     <Button
         android:id="@+id/shop2"
@@ -119,7 +121,8 @@
         android:layout_below="@+id/shop1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-102dp"
-        android:text="SHOP 2" />
+        android:text="SHOP 2"
+        android:textColor="#000000"/>
 </RelativeLayout>
 
 
