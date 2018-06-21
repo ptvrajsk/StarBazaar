@@ -94,35 +94,58 @@
         android:layout_below="@+id/dateMarket"
         android:text="7.00 pm to 10.30 pm"
         android:textColor="#000000"/>
-    <Button
-        android:id="@+id/shop1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="102dp"
-        android:text="SHOP 1"
-        android:onClick="onClickShop"
-        android:textColor="#000000"/>
 
-    <Button
-        android:id="@+id/shop3"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="146dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="SHOP 3"
-        android:textColor="#000000"/>
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:id="@+id/shop2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/shop1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-102dp"
-        android:text="SHOP 2"
-        android:textColor="#000000"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/shop1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:onClick="onClickShop"
+                android:text="SHOP 1"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/shop2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shop1"
+                android:text="SHOP 2"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/shop3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop2"
+                android:text="SHOP 3"
+                android:textColor="#000000"/>
+
+            <Button
+            android:id="@+id/shop4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shop3"
+            android:text="SHOP 4"
+            android:textColor="#000000"/>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
 </RelativeLayout>
 
 
