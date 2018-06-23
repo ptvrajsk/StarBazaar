@@ -1,7 +1,10 @@
 package com.android.sonsofpitches.starbazaar;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
+import android.support.v4.widget.TextViewCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +30,18 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.cardview_events_prefab, parent, false);
+
+        int cardWidth = ((Resources.getSystem().getDisplayMetrics().widthPixels) / 2) - 55;
+        int cardHeight = ((Resources.getSystem().getDisplayMetrics().heightPixels) / 3) - 45;
+
+        CardView cv = view.findViewById(R.id.eventsFullCardView);
+        ViewGroup.LayoutParams layoutParams = cv.getLayoutParams();
+        layoutParams.width = cardWidth;
+        layoutParams.height = cardHeight;
+        cv.setLayoutParams(layoutParams);
+
+        TextViewCompat.setAutoSizeTextTypeWithDefaults((TextView)view.findViewById(R.id.eventLocation), TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+
         return new EventsList_ViewHolder(view);
     }
 

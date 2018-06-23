@@ -40,11 +40,20 @@ public class EventsList extends AppCompatActivity implements HeaderFragment.Head
         listOfEvents.add(new EventsList_Event("Bedok", R.drawable.test_image));
         listOfEvents.add(new EventsList_Event("Geylang", R.drawable.test_image));
         listOfEvents.add(new EventsList_Event("Bukit Panjang", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Bukit Batok", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Pasir Panjang", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Jurong East", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Marina Bay", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Choa Chu Kang", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Payar Lebar", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Tampines", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Little India", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Chinatown", R.drawable.test_image));
+        listOfEvents.add(new EventsList_Event("Botanic Gardens", R.drawable.test_image));
 
-
-        RecyclerView myrv = (RecyclerView) findViewById(R.id.eventsListRecyclerView);
+        RecyclerView myrv = findViewById(R.id.eventsListRecyclerView);
         EventsList_RecyclerViewAdapter myAdapter = new EventsList_RecyclerViewAdapter(this, listOfEvents);
-        myrv.setLayoutManager(new GridLayoutManager(this, 1));
+        myrv.setLayoutManager(new GridLayoutManager(this, 2));
         myrv.setAdapter(myAdapter);
 
     }
