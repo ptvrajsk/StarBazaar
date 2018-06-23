@@ -1,6 +1,7 @@
 package com.android.sonsofpitches.starbazaar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.TextViewCompat;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -40,7 +42,7 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
         layoutParams.height = cardHeight;
         cv.setLayoutParams(layoutParams);
 
-        TextViewCompat.setAutoSizeTextTypeWithDefaults((TextView)view.findViewById(R.id.eventLocation), TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration((TextView)view.findViewById(R.id.eventLocation), 15, 25, 1, 2);
 
         return new EventsList_ViewHolder(view);
     }
@@ -50,6 +52,16 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
 
         holder.eventLocation.setText(mData.get(position).getLocation());
         holder.eventThumbnail.setImageResource(mData.get(position).getThumbnail());
+
+        CardView cv = holder.eventsCardView;
+
+        cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "Event has been clicked", Toast.LENGTH_LONG).show();
+            }
+        });
+
 
     }
 
@@ -62,11 +74,13 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
 
         TextView eventLocation;
         ImageView eventThumbnail;
+        CardView eventsCardView;
 
         public EventsList_ViewHolder(View itemView) {
             super(itemView);
             eventLocation = itemView.findViewById(R.id.eventLocation);
             eventThumbnail = itemView.findViewById(R.id.eventThumbnail);
+            eventsCardView = itemView.findViewById(R.id.eventsFullCardView);
         }
     }
 
