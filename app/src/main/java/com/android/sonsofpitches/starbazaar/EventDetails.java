@@ -1,6 +1,8 @@
 package com.android.sonsofpitches.starbazaar;
 
 
+import android.app.usage.UsageEvents;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
@@ -12,7 +14,7 @@ import android.widget.Toast;
 
 public class EventDetails extends AppCompatActivity implements HeaderFragment.HeaderFragmentListener{
 
-    private String eventName;
+    private EventsList_Event event;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +27,10 @@ public class EventDetails extends AppCompatActivity implements HeaderFragment.He
         TextView eventTime = this.findViewById(R.id.timeText);
         TextView eventLocation = this.findViewById(R.id.addressText);
 
-
-        Intent i = this.getIntent();
-        EventsList_Event currentEvent = i.getParcelableExtra("Event");
-        this.eventName = currentEvent.getEventName();
-        Toast.makeText(this, eventName, Toast.LENGTH_LONG).show();
-        eventDate.setText(currentEvent.getEventDate());
-        eventTime.setText(currentEvent.getEventTime());
-        eventLocation.setText(currentEvent.getLocation_full());
+        this.event = this.getIntent().getParcelableExtra("Event");
+        eventDate.setText(event.getEventDate());
+        eventTime.setText(event.getEventTime());
+        eventLocation.setText(event.getLocation_full());
 
     }
 
@@ -43,9 +41,11 @@ public class EventDetails extends AppCompatActivity implements HeaderFragment.He
 
     @Override
     public void setHeaderText(TextView headerText) {
-        headerText.setText(eventName);
+        headerText.setText(this.getIntent().getStringExtra("EventName"));
 
     }
+
+
 
     @Override
     public void revertToPreviousPage() {

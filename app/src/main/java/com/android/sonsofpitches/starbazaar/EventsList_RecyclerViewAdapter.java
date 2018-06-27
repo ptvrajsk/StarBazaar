@@ -59,6 +59,7 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
             public void onClick(View v) {
                 Intent i = new Intent(mContext, EventDetails.class);
                 i.putExtra("Event", mData.get(position));
+                i.putExtra("EventName", mData.get(position).getEventName());
                 mContext.startActivity(i);
             }
         });
