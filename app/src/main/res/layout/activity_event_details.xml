@@ -31,7 +31,7 @@
         android:layout_marginStart="20dp"
         android:text="Participating Shops "
         android:textSize="18sp"
-        android:textColor="#000000"/>
+        android:textColor="#FFF"/>
 
 
 
@@ -44,9 +44,9 @@
         android:layout_marginTop="84dp"
         android:text="Date :"
         android:textSize="18sp"
-        android:textColor="#000000" />
+        android:textColor="#FFF" />
 
-    <EditText
+    <TextView
         android:id="@+id/dateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,7 +54,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="68dp"
         android:text="24/09/2018"
-        android:textColor="#000000"/>
+        android:textSize="18sp"
+        android:textColor="#FFF"/>
 
     <TextView
         android:id="@+id/marketAddress"
@@ -65,16 +66,17 @@
         android:layout_marginTop="154dp"
         android:text="Address : "
         android:textSize="18sp"
-        android:textColor="#000000"/>
+        android:textColor="#FFF"/>
 
-    <EditText
+    <TextView
         android:id="@+id/addressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/marketAddress"
         android:layout_toEndOf="@+id/marketAddress"
         android:text="34 Bt Batok West Ave 5, Roadside"
-        android:textColor="#000000"/>
+        android:textSize="18sp"
+        android:textColor="#FFF"/>
 
     <TextView
         android:id="@+id/timeMarket"
@@ -84,16 +86,18 @@
         android:layout_below="@+id/dateText"
         android:text="Time :"
         android:textSize="18sp"
-        android:textColor="#000000"/>
+        android:textColor="#FFF"/>
 
-    <EditText
+    <TextView
         android:id="@+id/timeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/dateText"
         android:layout_below="@+id/dateMarket"
+        android:layout_toEndOf="@id/timeMarket"
         android:text="7.00 pm to 10.30 pm"
-        android:textColor="#000000"/>
+        android:textSize="18sp"
+        android:textColor="#FFF"/>
 
     <ScrollView
         android:layout_width="match_parent"

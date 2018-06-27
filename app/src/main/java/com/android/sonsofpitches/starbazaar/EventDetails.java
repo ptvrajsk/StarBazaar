@@ -6,9 +6,13 @@ import android.os.Bundle;
 import android.widget.RelativeLayout;
 import android.content.Intent;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
-public class EventDetails extends AppCompatActivity {
+public class EventDetails extends AppCompatActivity implements HeaderFragment.HeaderFragmentListener{
+
+    private String eventName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +21,19 @@ public class EventDetails extends AppCompatActivity {
 
         RelativeLayout eventOverview = findViewById(R.id.eventOverview);
         eventOverview.setBackgroundResource(R.drawable.svg_loginpage_background);
+        TextView eventDate = this.findViewById(R.id.dateText);
+        TextView eventTime = this.findViewById(R.id.timeText);
+        TextView eventLocation = this.findViewById(R.id.addressText);
+
+
+        Intent i = this.getIntent();
+        EventsList_Event currentEvent = i.getParcelableExtra("Event");
+        this.eventName = currentEvent.getEventName();
+        Toast.makeText(this, eventName, Toast.LENGTH_LONG).show();
+        eventDate.setText(currentEvent.getEventDate());
+        eventTime.setText(currentEvent.getEventTime());
+        eventLocation.setText(currentEvent.getLocation_full());
+
     }
 
     public void onClickShop (View view) {
@@ -24,10 +41,14 @@ public class EventDetails extends AppCompatActivity {
         startActivity(goToShop);
     }
 
-    // TODO: Fill in the events list class name (Back button functionality?)
-    public void backButton (View view) {
-        Intent goBackToEvents = new Intent(this,LoginPage.class ); // FILL IN EVENTS LIST CLASS INSTEAD. JUST PUT THIS AS A
-                                                                                // FILLER FOR THE TIME BEING.
-        startActivity(goBackToEvents);
+    @Override
+    public void setHeaderText(TextView headerText) {
+        headerText.setText(eventName);
+
+    }
+
+    @Override
+    public void revertToPreviousPage() {
+        this.finish();
     }
 }

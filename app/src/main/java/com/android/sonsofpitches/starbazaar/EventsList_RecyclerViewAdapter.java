@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -48,9 +47,9 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EventsList_ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull EventsList_ViewHolder holder, final int position) {
 
-        holder.eventLocation.setText(mData.get(position).getLocation());
+        holder.eventLocation.setText(mData.get(position).getLocation_brief());
         holder.eventThumbnail.setImageResource(mData.get(position).getThumbnail());
 
         CardView cv = holder.eventsCardView;
@@ -58,7 +57,9 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
         cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Event has been clicked", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(mContext, EventDetails.class);
+                i.putExtra("Event", mData.get(position));
+                mContext.startActivity(i);
             }
         });
 
