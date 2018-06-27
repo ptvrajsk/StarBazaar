@@ -28,16 +28,23 @@ public class LoginPage extends AppCompatActivity {
         loginPageView.setBackgroundResource(R.drawable.svg_loginpage_background);
 
         userButton.setBackgroundResource(R.drawable.loginpage_userbutton_background);
-        final Intent i = new Intent(this, EventsList.class);
         userButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(i);
+                Intent m = new Intent(getApplicationContext(), EventsList.class);
+                startActivity(m);
                 finish();
             }
         });
 
         orgButton.setBackgroundResource(R.drawable.loginpage_orgbutton_background);
+        orgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), EventCreation.class);
+                startActivity(i);
+            }
+        });
 
         //Animation Section
         final ImageView stars = findViewById(R.id.stars);
