@@ -7,27 +7,27 @@ public class EventsList_Event implements Parcelable {
 
     private String eventName;
     private String eventDate;
-    private String location_full;
+    private String eventLocationFull;
     private String eventTime;
-    private String location_brief;
-    private int thumbnail;
+    private String eventLocationBrief;
+    private int eventThumbnail;
 
-    public EventsList_Event(String eventName, String eventDate, String location_full, String eventTime, String location_brief, int thumbnail) {
+    public EventsList_Event(String eventName, String eventDate, String eventLocationFull, String eventTime, String eventLocationBrief, int eventThumbnail) {
         this.eventName = eventName;
         this.eventDate = eventDate;
-        this.location_full = location_full;
+        this.eventLocationFull = eventLocationFull;
         this.eventTime = eventTime;
-        this.location_brief = location_brief;
-        this.thumbnail = thumbnail;
+        this.eventLocationBrief = eventLocationBrief;
+        this.eventThumbnail = eventThumbnail;
     }
 
     public EventsList_Event(Parcel input) {
         this.eventName = input.readString();
         this.eventDate = input.readString();
         this.eventTime = input.readString();
-        this.location_full = input.readString();
-        this.location_brief = input.readString();
-        this.thumbnail = input.readInt();
+        this.eventLocationFull = input.readString();
+        this.eventLocationBrief = input.readString();
+        this.eventThumbnail = input.readInt();
     }
 
     public String getEventName() {
@@ -38,20 +38,20 @@ public class EventsList_Event implements Parcelable {
         return eventDate;
     }
 
-    public String getLocation_full() {
-        return location_full;
+    public String getEventLocationFull() {
+        return eventLocationFull;
     }
 
     public String getEventTime() {
         return eventTime;
     }
 
-    public String getLocation_brief() {
-        return location_brief;
+    public String getEventLocationBrief() {
+        return eventLocationBrief;
     }
 
-    public int getThumbnail() {
-        return thumbnail;
+    public int getEventThumbnail() {
+        return eventThumbnail;
     }
 
     /**
@@ -67,14 +67,14 @@ public class EventsList_Event implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         //NOTE: Writing to and Reading from Parcel follows a First in First Out model.
-        //Writing in the thumbnail int first followed by "id" int means when doing a read from the
-        //parcel, the thumbnail int will be retrieved first.
+        //Writing in the eventThumbnail int first followed by "id" int means when doing a read from the
+        //parcel, the eventThumbnail int will be retrieved first.
         dest.writeString(eventName);
         dest.writeString(eventDate);
         dest.writeString(eventTime);
-        dest.writeString(location_full);
-        dest.writeString(location_brief);
-        dest.writeInt(this.thumbnail);
+        dest.writeString(eventLocationFull);
+        dest.writeString(eventLocationBrief);
+        dest.writeInt(this.eventThumbnail);
     }
 
     public static final Parcelable.Creator<EventsList_Event> CREATOR = new Parcelable.Creator<EventsList_Event>() {
