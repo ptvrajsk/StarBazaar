@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/eventCreationActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
@@ -35,7 +36,8 @@
         app:layout_constraintLeft_toRightOf="@id/eventsCreationEventNameTitle"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/eventCreationHeader"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:inputType="text"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,7 +57,8 @@
         app:layout_constraintLeft_toRightOf="@id/eventsCreationEventDateTitle"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/eventsCreationEventNameInput"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:inputType="date" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,12 +75,34 @@
     <EditText
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:id="@+id/eventsCreationEventLocationInput"
+        android:id="@+id/eventsCreationEventLocationFullInput"
         app:layout_constraintLeft_toRightOf="@id/eventsCreationEventDateTitle"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/eventsCreationEventDateInput"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:inputType="text"/>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventsCreationEventTimeTitle"
+        app:layout_constraintTop_toBottomOf="@id/eventsCreationEventLocationFullTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="11dp"
+        android:text="Event Time:"
+        android:textSize="16sp" />
+
+    <EditText
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventsCreationEventTimeInput"
+        app:layout_constraintLeft_toRightOf="@id/eventsCreationEventTimeTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eventsCreationEventLocationFullInput"
+        android:layout_marginTop="10dp"
+        android:inputType="time"/>
 
     <Button
         android:layout_width="wrap_content"
