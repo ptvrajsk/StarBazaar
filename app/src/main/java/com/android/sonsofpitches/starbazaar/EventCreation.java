@@ -44,7 +44,7 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
             @Override
             public void onClick(View v) {
                 db.addEvent(new EventsList_Event(eventNameInput.getText().toString(), eventDateInput.getText().toString(), eventLocFullInput.getText().toString(),
-                            eventTimeInput.getText().toString(), eventLocBrief.getText().toString(), R.drawable.svg_loginpage_background));
+                            eventTimeInput.getText().toString(), eventLocBrief.getText().toString(), R.drawable.test_image));
             }
         });
 

@@ -42,6 +42,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), EventCreation.class);
+                i.putExtra("HeaderTitle", "Create Event");
                 startActivity(i);
             }
         });
