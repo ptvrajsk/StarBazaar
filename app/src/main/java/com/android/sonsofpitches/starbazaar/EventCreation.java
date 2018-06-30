@@ -1,5 +1,8 @@
 package com.android.sonsofpitches.starbazaar;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +14,7 @@ import android.widget.Toast;
 
 public class EventCreation extends AppCompatActivity implements HeaderFragment.HeaderFragmentListener {
 
+    public static final int PICK_IMAGE = 1;
     EditText eventNameInput;
     EditText eventDateInput;
     EditText eventLocFullInput;
@@ -54,6 +58,35 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
                 db.deleteEvents();
             }
         });
+
+
+        Button chooseImage = this.findViewById(R.id.eventsCreationSelectImage);
+        chooseImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                getIntent.setType("image/*");
+
+                Intent pickIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                pickIntent.setType("image/*");
+
+                Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
+
+                startActivityForResult(chooserIntent, PICK_IMAGE);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
+
+            Bundle extras = data.getExtras();
+            Bitmap photo = (Bitmap) extras.get("data");
+        }
     }
 
     @Override

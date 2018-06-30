@@ -129,6 +129,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/eventsCreationSelectImage"
+        android:text="Select Image"
+        app:layout_constraintBottom_toTopOf="@id/eventsCreationSaveEventButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/eventsCreationSaveEventButton"
         android:text="Save Event"
         app:layout_constraintLeft_toLeftOf="parent"
