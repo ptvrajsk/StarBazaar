@@ -1,5 +1,7 @@
 package com.android.sonsofpitches.starbazaar;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -10,9 +12,9 @@ public class EventsList_Event implements Parcelable {
     private String eventLocationFull;
     private String eventTime;
     private String eventLocationBrief;
-    private int eventThumbnail;
+    private byte[] eventThumbnail;
 
-    public EventsList_Event(String eventName, String eventDate, String eventLocationFull, String eventTime, String eventLocationBrief, int eventThumbnail) {
+    public EventsList_Event(String eventName, String eventDate, String eventLocationFull, String eventTime, String eventLocationBrief, byte[] eventThumbnail) {
         this.eventName = eventName;
         this.eventDate = eventDate;
         this.eventLocationFull = eventLocationFull;
@@ -27,7 +29,9 @@ public class EventsList_Event implements Parcelable {
         this.eventTime = input.readString();
         this.eventLocationFull = input.readString();
         this.eventLocationBrief = input.readString();
-        this.eventThumbnail = input.readInt();
+        int byteArrayLen = input.readInt();
+        this.eventThumbnail = new byte[byteArrayLen];
+        input.readByteArray(this.eventThumbnail);
     }
 
     public String getEventName() {
@@ -50,8 +54,12 @@ public class EventsList_Event implements Parcelable {
         return eventLocationBrief;
     }
 
-    public int getEventThumbnail() {
+    public byte[] getEventThumbnail() {
         return eventThumbnail;
+    }
+
+    public Bitmap getEventThumbnailBitMap() {
+        return BitmapFactory.decodeByteArray(this.eventThumbnail, 0, this.eventThumbnail.length);
     }
 
     /**
@@ -74,7 +82,8 @@ public class EventsList_Event implements Parcelable {
         dest.writeString(eventTime);
         dest.writeString(eventLocationFull);
         dest.writeString(eventLocationBrief);
-        dest.writeInt(this.eventThumbnail);
+        dest.writeInt(this.eventThumbnail.length);
+        dest.writeByteArray(this.eventThumbnail);
     }
 
     public static final Parcelable.Creator<EventsList_Event> CREATOR = new Parcelable.Creator<EventsList_Event>() {

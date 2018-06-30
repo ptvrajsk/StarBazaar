@@ -2,6 +2,8 @@ package com.android.sonsofpitches.starbazaar;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class EventCreation extends AppCompatActivity implements HeaderFragment.HeaderFragmentListener {
 
@@ -23,6 +30,7 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
     Button saveButton;
     Button deleteButton;
     int thumbnail = R.drawable.svg_loginpage_background;
+    byte[] eventImage;
     DBHandler db;
 
     @Override
@@ -48,7 +56,7 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
             @Override
             public void onClick(View v) {
                 db.addEvent(new EventsList_Event(eventNameInput.getText().toString(), eventDateInput.getText().toString(), eventLocFullInput.getText().toString(),
-                            eventTimeInput.getText().toString(), eventLocBrief.getText().toString(), R.drawable.test_image));
+                            eventTimeInput.getText().toString(), eventLocBrief.getText().toString(), eventImage));
             }
         });
 
@@ -84,9 +92,37 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
 
         if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
 
-            Bundle extras = data.getExtras();
-            Bitmap photo = (Bitmap) extras.get("data");
+            Uri imgData = data.getData();
+
+            try {
+                InputStream inputStream = getContentResolver().openInputStream(imgData);
+                Bitmap photo = BitmapFactory.decodeStream(inputStream);
+                eventImage = bitmapToByte(photo);
+
+            } catch (FileNotFoundException e) {
+                Toast.makeText(this, "Image cannot be found", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+
+
+            /*Bundle extras = data.getExtras();
+            Bitmap photo = (Bitmap) extras.get("data");*/
         }
+    }
+
+    private byte[] bitmapToByte(Bitmap photo) {
+        try {
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            photo.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte[] output = stream.toByteArray();
+            stream.close();
+            return output;
+        } catch (IOException e) {
+            Toast.makeText(this, "Issue with Image compression", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     @Override

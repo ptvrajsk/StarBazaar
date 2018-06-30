@@ -38,7 +38,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_EVENTTIME + " TEXT, "
                 + COLUMN_EVENTLOCFULL + " TEXT, "
                 + COLUMN_EVENTLOCBRIEF + " TEXT, "
-                +COLUMN_EVENTTHUMBNAIL + " INTEGER "
+                +COLUMN_EVENTTHUMBNAIL + " BLOB "
                 + ");";
 
         db.execSQL(query);
@@ -94,7 +94,7 @@ public class DBHandler extends SQLiteOpenHelper {
             String time = c.getString(e_time);
             String locFull = c.getString(e_locFull);
             String locBrf = c.getString(e_locBrief);
-            int thumb = c.getInt(e_thumbnail);
+            byte[] thumb = c.getBlob(e_thumbnail);
 
 
             listOfSavedEvents.add(new EventsList_Event(name, date, locFull, time, locBrf, thumb));
