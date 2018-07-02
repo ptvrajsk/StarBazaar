@@ -14,6 +14,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -32,6 +35,7 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
     int thumbnail = R.drawable.svg_loginpage_background;
     byte[] eventImage;
     DBHandler db;
+    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +54,13 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
 
         deleteButton = this.findViewById(R.id.eventsCreationClearEvents);
         saveButton = this.findViewById(R.id.eventsCreationSaveEventButton);
-        db = new DBHandler(this, null, null, 1);
+        //db = new DBHandler(this, null, null, 1);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 db.addEvent(new EventsList_Event(eventNameInput.getText().toString(), eventDateInput.getText().toString(), eventLocFullInput.getText().toString(),
-                            eventTimeInput.getText().toString(), eventLocBrief.getText().toString(), eventImage));
+                            eventTimeInput.getText().toString(), eventLocBrief.getText().toString(), R.drawable.test_image));
             }
         });
 

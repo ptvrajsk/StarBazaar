@@ -12,9 +12,9 @@ public class EventsList_Event implements Parcelable {
     private String eventLocationFull;
     private String eventTime;
     private String eventLocationBrief;
-    private byte[] eventThumbnail;
+    private int eventThumbnail;
 
-    public EventsList_Event(String eventName, String eventDate, String eventLocationFull, String eventTime, String eventLocationBrief, byte[] eventThumbnail) {
+    public EventsList_Event(String eventName, String eventDate, String eventLocationFull, String eventTime, String eventLocationBrief, int eventThumbnail) {
         this.eventName = eventName;
         this.eventDate = eventDate;
         this.eventLocationFull = eventLocationFull;
@@ -29,9 +29,7 @@ public class EventsList_Event implements Parcelable {
         this.eventTime = input.readString();
         this.eventLocationFull = input.readString();
         this.eventLocationBrief = input.readString();
-        int byteArrayLen = input.readInt();
-        this.eventThumbnail = new byte[byteArrayLen];
-        input.readByteArray(this.eventThumbnail);
+        this.eventThumbnail = input.readInt();
     }
 
     public String getEventName() {
@@ -54,14 +52,9 @@ public class EventsList_Event implements Parcelable {
         return eventLocationBrief;
     }
 
-    public byte[] getEventThumbnail() {
+    public int getEventThumbnail() {
         return eventThumbnail;
     }
-
-    public Bitmap getEventThumbnailBitMap() {
-        return BitmapFactory.decodeByteArray(this.eventThumbnail, 0, this.eventThumbnail.length);
-    }
-
     /**
      * Not entirely sure what this function is for.
      * @return 0.
@@ -82,8 +75,7 @@ public class EventsList_Event implements Parcelable {
         dest.writeString(eventTime);
         dest.writeString(eventLocationFull);
         dest.writeString(eventLocationBrief);
-        dest.writeInt(this.eventThumbnail.length);
-        dest.writeByteArray(this.eventThumbnail);
+        dest.writeInt(eventThumbnail);
     }
 
     public static final Parcelable.Creator<EventsList_Event> CREATOR = new Parcelable.Creator<EventsList_Event>() {

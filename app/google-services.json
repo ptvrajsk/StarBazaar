@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "63601819096",
+    "firebase_url": "https://starbazaar-53d2a.firebaseio.com",
+    "project_id": "starbazaar-53d2a",
+    "storage_bucket": "starbazaar-53d2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63601819096:android:91e4b289d04e1459",
+        "android_client_info": {
+          "package_name": "com.android.sonsofpitches.starbazaar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63601819096-blecpr14seqogrp9ngk1uikkke7iij0s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.sonsofpitches.starbazaar",
+            "certificate_hash": "55844c58f8b683ed0d7d6833c59b1659e408c4e8"
+          }
+        },
+        {
+          "client_id": "63601819096-bj4u6d7si0q8q4s6igolto26m3n9lesc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi-S-I-r_-S7Of359MdfQesLV3icopWeo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63601819096-bj4u6d7si0q8q4s6igolto26m3n9lesc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

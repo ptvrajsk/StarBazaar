@@ -50,7 +50,7 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
     public void onBindViewHolder(@NonNull EventsList_ViewHolder holder, final int position) {
 
         holder.eventLocation.setText(mData.get(position).getEventLocationBrief());
-        holder.eventThumbnail.setImageBitmap(mData.get(position).getEventThumbnailBitMap());
+        holder.eventThumbnail.setImageResource(mData.get(position).getEventThumbnail());
 
         CardView cv = holder.eventsCardView;
 
