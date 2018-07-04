@@ -36,6 +36,11 @@ public class EventDetails extends AppCompatActivity implements HeaderFragment.He
         startActivity(goToShop);
     }
 
+    public void onClickFloorPlan (View view) {
+        Intent goToFloor = new Intent(this, FloorPlan.class);
+        startActivity(goToFloor);
+    }
+
     @Override
     public void setHeaderText(TextView headerText) {
         headerText.setText(this.getIntent().getStringExtra("EventName"));

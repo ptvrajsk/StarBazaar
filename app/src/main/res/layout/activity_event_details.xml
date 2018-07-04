@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EventDetails"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorPrimaryDark"
     android:id="@+id/eventOverview">
 
     <fragment
@@ -17,8 +17,9 @@
     <ImageView
         android:id="@+id/nightMarketPic"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_height="171dp"
+        android:layout_above="@+id/participatingShops"
+        android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/nightmarket" />
 
     <TextView
@@ -27,11 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="158dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginBottom="154dp"
+        android:layout_marginStart="18dp"
         android:text="Participating Shops "
-        android:textSize="18sp"
-        android:textColor="#FFF"/>
+        android:textColor="#FFF"
+        android:textSize="18sp" />
 
 
 
@@ -61,22 +62,21 @@
         android:id="@+id/marketAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/participatingShops"
-        android:layout_marginTop="154dp"
+        android:layout_below="@+id/timeMarket"
         android:text="Address : "
-        android:textSize="18sp"
-        android:textColor="#FFF"/>
+        android:textColor="#FFF"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/addressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/marketAddress"
+        android:layout_below="@+id/timeMarket"
         android:layout_toEndOf="@+id/marketAddress"
         android:text="34 Bt Batok West Ave 5, Roadside"
-        android:textSize="18sp"
-        android:textColor="#FFF"/>
+        android:textColor="#FFF"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/timeMarket"
@@ -148,6 +148,18 @@
 
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/floorplanbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="165dp"
+        android:text="FLOOR PLAN"
+        android:textColor="#000000"
+        android:layout_above="@+id/nightMarketPic"
+        android:onClick="onClickFloorPlan"/>
 
 
 </RelativeLayout>
