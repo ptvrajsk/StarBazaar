@@ -14,9 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -35,7 +32,6 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
     int thumbnail = R.drawable.svg_loginpage_background;
     byte[] eventImage;
     DBHandler db;
-    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

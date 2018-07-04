@@ -38,6 +38,7 @@ public class EventDetails extends AppCompatActivity implements HeaderFragment.He
 
     public void onClickFloorPlan (View view) {
         Intent goToFloor = new Intent(this, FloorPlan.class);
+        goToFloor.putExtra("Floor Plan", "Floor Plan");
         startActivity(goToFloor);
     }
 
