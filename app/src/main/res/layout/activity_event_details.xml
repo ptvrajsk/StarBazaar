@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:onClick="onClickShop"
+                android:onClick="onClickBaskinRobbins"
                 android:text="SHOP 1"
                 android:textColor="#000000" />
 
@@ -136,12 +136,84 @@
                 android:textColor="#000000"/>
 
             <Button
-            android:id="@+id/shop4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/shop3"
-            android:text="SHOP 4"
-            android:textColor="#000000"/>
+                android:id="@+id/shop4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop3"
+                android:text="SHOP 4"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/shop5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop4"
+                android:text="SHOP 5"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/shop6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop5"
+                android:text="SHOP 6"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/shop7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop6"
+                android:text="SHOP 7"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/shop8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop7"
+                android:text="SHOP 8"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/shop9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop8"
+                android:text="SHOP 9"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/shop10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop9"
+                android:text="SHOP 10"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/shop11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop10"
+                android:text="SHOP 11"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/shop12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop11"
+                android:text="SHOP 12"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/shop13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop12"
+                android:text="SHOP 13"
+                android:textColor="#000000"/>
 
 
         </RelativeLayout>
