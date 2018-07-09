@@ -116,7 +116,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:onClick="onClickBaskinRobbins"
-                android:text="SHOP 1"
+                android:text="BASKIN ROBBINS"
                 android:textColor="#000000" />
 
             <Button
@@ -124,7 +124,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/shop1"
-                android:text="SHOP 2"
+                android:text="POPBAR"
+                android:onClick="onClickPopbar"
                 android:textColor="#000000" />
 
             <Button
@@ -132,7 +133,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop2"
-                android:text="SHOP 3"
+                android:onClick="onClickChippy"
+                android:text="CHIPPY"
                 android:textColor="#000000"/>
 
             <Button
@@ -140,7 +142,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop3"
-                android:text="SHOP 4"
+                android:onClick="onClickIrvins"
+                android:text="IRVINS SALTED EGG"
                 android:textColor="#000000"/>
 
             <Button
@@ -148,7 +151,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop4"
-                android:text="SHOP 5"
+                android:text="BEARD PAPA"
+                android:onClick="onClickBeardPapa"
                 android:textColor="#000000"/>
 
             <Button
@@ -156,7 +160,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop5"
-                android:text="SHOP 6"
+                android:text="WOW TAKO"
+                android:onClick="onClickWowTako"
                 android:textColor="#000000"/>
 
             <Button
@@ -164,7 +169,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop6"
-                android:text="SHOP 7"
+                android:text="WOOW"
+                android:onClick="onClickWoow"
                 android:textColor="#000000"/>
 
             <Button
@@ -172,7 +178,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop7"
-                android:text="SHOP 8"
+                android:onClick="onClickFruits"
+                android:text="SF FRUITS"
                 android:textColor="#000000"/>
 
             <Button
@@ -180,7 +187,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop8"
-                android:text="SHOP 9"
+                android:text="SAYBONS FRENCH FOOD"
+                android:onClick="onClickSaybons"
                 android:textColor="#000000"/>
 
             <Button
@@ -188,7 +196,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop9"
-                android:text="SHOP 10"
+                android:onClick="onClickSnackz"
+                android:text="SNACKZ IT"
                 android:textColor="#000000"/>
 
             <Button
@@ -196,7 +205,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop10"
-                android:text="SHOP 11"
+                android:onClick="onClickTori"
+                android:text="TORI-Q"
                 android:textColor="#000000"/>
 
             <Button
@@ -204,7 +214,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop11"
-                android:text="SHOP 12"
+                android:onClick="onClickYole"
+                android:text="YOLE"
                 android:textColor="#000000"/>
 
             <Button
@@ -212,7 +223,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/shop12"
-                android:text="SHOP 13"
+                android:onClick="onClickNana"
+                android:text="NANA'S GREEN TEA"
                 android:textColor="#000000"/>
 
 

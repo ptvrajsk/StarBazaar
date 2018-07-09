@@ -41,6 +41,7 @@ public class IndividualShopDetails extends AppCompatActivity implements HeaderFr
         int imageID = currentShop.getShopLogo();
         String description = currentShop.getShopSummary();
         this.headerShopName = currentShop.getShopName();
+        String name = currentShop.getShopName();
 
         ImageView logo = findViewById(R.id.individualShopDetailsImage);
         logo.setImageResource(imageID);
@@ -48,10 +49,8 @@ public class IndividualShopDetails extends AppCompatActivity implements HeaderFr
         TextView summary = findViewById(R.id.individualShopDetailsDescription);
         summary.setText(description);
 
-        /*
-        Typeface quicksandFont = Typeface.createFromAsset(getAssets(), "fonts/font_quicksand_regular.ttf");
-        TextView shopDescription = (TextView) findViewById(R.id.individualShopDetailsDescription);
-        shopDescription.setTypeface(quicksandFont);
-        */
+        TextView shopName = findViewById(R.id.shopName);
+        shopName.setText(name);
+
     }
 }

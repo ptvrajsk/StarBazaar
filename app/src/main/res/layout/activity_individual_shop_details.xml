@@ -14,22 +14,24 @@
         android:name="com.android.sonsofpitches.starbazaar.HeaderFragment"
         android:id="@+id/individualShopDetailsHeader"/>
 
-    <android.support.constraint.ConstraintLayout
+    <RelativeLayout
+        android:id="@+id/individualShopDetailsImageLayout"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:id="@+id/individualShopDetailsImageLayout"
-        app:layout_constraintTop_toBottomOf="@id/individualShopDetailsHeader"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="52dp"
+        android:paddingEnd="50dp"
+        android:paddingHorizontal="50dp"
         android:paddingStart="50dp"
-        android:paddingEnd="50dp">
+        app:layout_constraintTop_toBottomOf="@id/individualShopDetailsHeader"
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/individualShopDetailsImage"
-            android:scaleType="centerCrop"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop" />
 
-    </android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
 
 
     <TextView
@@ -41,6 +43,18 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="20dp"
         android:textSize="23sp"
+        android:textColor="#FFF"/>
+
+    <TextView
+        android:id="@+id/shopName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginTop="20dp"
+        android:textSize="23sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="80dp"
         android:textColor="#FFF"/>
 
 
