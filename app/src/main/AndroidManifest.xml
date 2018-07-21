@@ -22,7 +22,8 @@
         <activity android:name=".EventDetails" />
         <activity android:name=".EventsList" />
         <activity android:name=".EventCreation" />
-        <activity android:name=".FloorPlan"></activity>
+        <activity android:name=".FloorPlan" />
+        <activity android:name=".NoInformation"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.android.sonsofpitches.starbazaar;
 
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -8,6 +9,7 @@ import android.widget.RelativeLayout;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
+import java.net.URI;
 
 
 public class EventDetails extends AppCompatActivity implements HeaderFragment.HeaderFragmentListener{
@@ -31,6 +33,16 @@ public class EventDetails extends AppCompatActivity implements HeaderFragment.He
         eventLocation.setText(event.getEventLocationFull());
 
     }
+    public void onClickGoMaps (View view) {
+        TextView location = this.findViewById(R.id.addressText);
+        String address = location.getText().toString();
+        String wholeSyntax = "geo:0,0?q=" + address;
+        Uri intentMaps = Uri.parse(wholeSyntax);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, intentMaps);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
 
     public void onClickBaskinRobbins (View view) {
         String description = "Baskin-Robbins offers over 1000 flavors of ice cream, including Sugar " +

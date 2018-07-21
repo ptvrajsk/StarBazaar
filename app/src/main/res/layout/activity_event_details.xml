@@ -74,7 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/timeMarket"
         android:layout_toEndOf="@+id/marketAddress"
-        android:text="34 Bt Batok West Ave 5, Roadside"
+        android:text="383 Bt Batok West Avenue 5"
+        android:onClick="onClickGoMaps"
         android:textColor="#FFF"
         android:textSize="18sp" />
 
