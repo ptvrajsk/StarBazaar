@@ -1,6 +1,7 @@
 package com.android.sonsofpitches.starbazaar;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -98,8 +99,8 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
 /*                InputStream inputStream = getContentResolver().openInputStream(imgData);
                 Bitmap photo = BitmapFactory.decodeStream(inputStream);*/
 
-                this.eventImage = imgData.getPath();
-
+                this.eventImage = getImageFilePath(imgData);
+                Toast.makeText(this, eventImage, Toast.LENGTH_SHORT).show();
             } catch (NullPointerException e) {
                 Toast.makeText(this, "Image cannot be found", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
@@ -135,4 +136,25 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
     public void revertToPreviousPage() {
         this.finish();
     }
+
+    public String getImageFilePath(Uri uri) {
+        String path = null, image_id = null;
+
+        Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+            image_id = cursor.getString(0);
+            image_id = image_id.substring(image_id.lastIndexOf(":") + 1);
+            cursor.close();
+        }
+
+        cursor = getContentResolver().query(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, null, MediaStore.Images.Media._ID + " = ? ", new String[]{image_id}, null);
+        if (cursor!=null) {
+            cursor.moveToFirst();
+            path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+            cursor.close();
+        }
+        return path;
+    }
+
 }
