@@ -30,7 +30,7 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
     Button saveButton;
     Button deleteButton;
     int thumbnail = R.drawable.svg_loginpage_background;
-    byte[] eventImage;
+    String eventImage;
     DBHandler db;
 
     @Override
@@ -50,13 +50,13 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
 
         deleteButton = this.findViewById(R.id.eventsCreationClearEvents);
         saveButton = this.findViewById(R.id.eventsCreationSaveEventButton);
-        //db = new DBHandler(this, null, null, 1);
+        db = new DBHandler(this, null, null, 1);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 db.addEvent(new EventsList_Event(eventNameInput.getText().toString(), eventDateInput.getText().toString(), eventLocFullInput.getText().toString(),
-                            eventTimeInput.getText().toString(), eventLocBrief.getText().toString(), R.drawable.test_image));
+                            eventTimeInput.getText().toString(), eventLocBrief.getText().toString(), eventImage));
             }
         });
 
@@ -95,11 +95,12 @@ public class EventCreation extends AppCompatActivity implements HeaderFragment.H
             Uri imgData = data.getData();
 
             try {
-                InputStream inputStream = getContentResolver().openInputStream(imgData);
-                Bitmap photo = BitmapFactory.decodeStream(inputStream);
-                eventImage = bitmapToByte(photo);
+/*                InputStream inputStream = getContentResolver().openInputStream(imgData);
+                Bitmap photo = BitmapFactory.decodeStream(inputStream);*/
 
-            } catch (FileNotFoundException e) {
+                this.eventImage = imgData.getPath();
+
+            } catch (NullPointerException e) {
                 Toast.makeText(this, "Image cannot be found", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }

@@ -12,9 +12,9 @@ public class EventsList_Event implements Parcelable {
     private String eventLocationFull;
     private String eventTime;
     private String eventLocationBrief;
-    private int eventThumbnail;
+    private String eventThumbnail;
 
-    public EventsList_Event(String eventName, String eventDate, String eventLocationFull, String eventTime, String eventLocationBrief, int eventThumbnail) {
+    public EventsList_Event(String eventName, String eventDate, String eventLocationFull, String eventTime, String eventLocationBrief, String eventThumbnail) {
         this.eventName = eventName;
         this.eventDate = eventDate;
         this.eventLocationFull = eventLocationFull;
@@ -29,7 +29,7 @@ public class EventsList_Event implements Parcelable {
         this.eventTime = input.readString();
         this.eventLocationFull = input.readString();
         this.eventLocationBrief = input.readString();
-        this.eventThumbnail = input.readInt();
+        this.eventThumbnail = input.readString();
     }
 
     public String getEventName() {
@@ -52,7 +52,7 @@ public class EventsList_Event implements Parcelable {
         return eventLocationBrief;
     }
 
-    public int getEventThumbnail() {
+    public String getEventThumbnail() {
         return eventThumbnail;
     }
     /**
@@ -75,7 +75,7 @@ public class EventsList_Event implements Parcelable {
         dest.writeString(eventTime);
         dest.writeString(eventLocationFull);
         dest.writeString(eventLocationBrief);
-        dest.writeInt(eventThumbnail);
+        dest.writeString(eventThumbnail);
     }
 
     public static final Parcelable.Creator<EventsList_Event> CREATOR = new Parcelable.Creator<EventsList_Event>() {

@@ -3,6 +3,7 @@ package com.android.sonsofpitches.starbazaar;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.widget.CardView;
@@ -50,7 +51,9 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
     public void onBindViewHolder(@NonNull EventsList_ViewHolder holder, final int position) {
 
         holder.eventLocation.setText(mData.get(position).getEventLocationBrief());
-        holder.eventThumbnail.setImageResource(mData.get(position).getEventThumbnail());
+        /*holder.eventThumbnail.setImageResource(mData.get(position).getEventThumbnail());*/
+        holder.eventThumbnail.setImageBitmap(BitmapFactory.decodeFile(mData.get(position).getEventThumbnail()));
+
 
         CardView cv = holder.eventsCardView;
 

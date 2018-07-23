@@ -36,7 +36,8 @@ public class EventsList extends AppCompatActivity implements HeaderFragment.Head
         eventsList.setBackgroundResource(R.drawable.svg_loginpage_background);
 
         listOfEvents = new ArrayList<EventsList_Event>();
-        listOfEvents.add(new EventsList_Event("EventName1","10/10/18", "Bedok Street 42","4pm - 7pm","Bedok", R.drawable.test_image));
+        listOfEvents = new DBHandler(this, null, null, 1).retrieveData();
+        /*listOfEvents.add(new EventsList_Event("EventName1","10/10/18", "Bedok Street 42","4pm - 7pm","Bedok", R.drawable.test_image));
         listOfEvents.add(new EventsList_Event("EventName2","11/11/18", "Geylang Street 42","4pm - 7pm","Geylang", R.drawable.test_image));
         listOfEvents.add(new EventsList_Event("EventName3","12/12/18", "Bukit Panjang Street 42","4pm - 7pm","Bukit Panjang", R.drawable.test_image));
         listOfEvents.add(new EventsList_Event("EventName4","13/1/18", "Bukit Batok Street 42","4pm - 7pm","Bukit Batok", R.drawable.test_image));
@@ -49,7 +50,7 @@ public class EventsList extends AppCompatActivity implements HeaderFragment.Head
         listOfEvents.add(new EventsList_Event("EventName11","20/8/18", "Little India Street 42","4pm - 7pm","Little India", R.drawable.test_image));
         listOfEvents.add(new EventsList_Event("EventName12","21/9/18", "Chinatown Street 42","4pm - 7pm","Chinatown", R.drawable.test_image));
         listOfEvents.add(new EventsList_Event("EventName13","22/10/18", "Botanic Gardens Street 42","4pm - 7pm","Botanic Gardens", R.drawable.test_image));
-
+*/
 
         RecyclerView myrv = findViewById(R.id.eventsListRecyclerView);
         EventsList_RecyclerViewAdapter myAdapter = new EventsList_RecyclerViewAdapter(this, listOfEvents);
