@@ -18,7 +18,8 @@
         android:id="@+id/nightMarketPic"
         android:layout_width="wrap_content"
         android:layout_height="171dp"
-        android:layout_above="@+id/participatingShops"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/individualEventDetailsHeader"
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/nightmarket" />
 
@@ -26,13 +27,14 @@
         android:id="@+id/participatingShops"
         android:layout_width="181dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/individualEventScrollView"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="154dp"
-        android:layout_marginStart="18dp"
+        android:layout_alignParentEnd="true"
         android:text="Participating Shops "
-        android:textColor="#FFF"
-        android:textSize="18sp" />
+        android:layout_marginBottom="7dp"
+        android:textColor="#F2C94C"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
 
 
@@ -40,11 +42,11 @@
         android:id="@+id/dateMarket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/participatingShops"
-        android:layout_marginTop="84dp"
+        android:layout_below="@id/nightMarketPic"
         android:text="Date :"
         android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="50dp"
         android:textColor="#FFF" />
 
     <TextView
@@ -52,8 +54,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/dateMarket"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="68dp"
+        android:layout_toRightOf="@id/dateMarket"
+        android:layout_marginStart="10dp"
         android:text="24/09/2018"
         android:textSize="18sp"
         android:textColor="#FFF"/>
@@ -62,9 +64,9 @@
         android:id="@+id/marketAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/participatingShops"
+        android:layout_alignEnd="@id/dateMarket"
         android:layout_below="@+id/timeMarket"
-        android:text="Address : "
+        android:text="Address :"
         android:textColor="#FFF"
         android:textSize="18sp" />
 
@@ -72,8 +74,10 @@
         android:id="@+id/addressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/marketAddress"
         android:layout_below="@+id/timeMarket"
         android:layout_toEndOf="@+id/marketAddress"
+        android:layout_alignStart="@id/dateText"
         android:text="383 Bt Batok West Avenue 5"
         android:onClick="onClickGoMaps"
         android:textColor="#FFF"
@@ -83,8 +87,8 @@
         android:id="@+id/timeMarket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/participatingShops"
         android:layout_below="@+id/dateText"
+        android:layout_alignEnd="@id/dateMarket"
         android:text="Time :"
         android:textSize="18sp"
         android:textColor="#FFF"/>
@@ -102,9 +106,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
+        android:id="@+id/individualEventScrollView"
         android:layout_height="146dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -113,120 +120,159 @@
             <Button
                 android:id="@+id/shop1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:onClick="onClickBaskinRobbins"
                 android:text="BASKIN ROBBINS"
-                android:textColor="#000000" />
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop2"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@id/shop1"
                 android:text="POPBAR"
                 android:onClick="onClickPopbar"
-                android:textColor="#000000" />
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop3"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop2"
                 android:onClick="onClickChippy"
                 android:text="CHIPPY"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop4"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop3"
                 android:onClick="onClickIrvins"
                 android:text="IRVINS SALTED EGG"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop5"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop4"
                 android:text="BEARD PAPA"
                 android:onClick="onClickBeardPapa"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop6"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop5"
                 android:text="WOW TAKO"
                 android:onClick="onClickWowTako"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop7"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop6"
                 android:text="WOOW"
                 android:onClick="onClickWoow"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop8"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop7"
                 android:onClick="onClickFruits"
                 android:text="SF FRUITS"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop9"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop8"
                 android:text="SAYBONS FRENCH FOOD"
                 android:onClick="onClickSaybons"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop10"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop9"
                 android:onClick="onClickSnackz"
                 android:text="SNACKZ IT"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop11"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop10"
                 android:onClick="onClickTori"
                 android:text="TORI-Q"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop12"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop11"
                 android:onClick="onClickYole"
                 android:text="YOLE"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/shop13"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/individualdetails_participatingshops_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/shop12"
                 android:onClick="onClickNana"
                 android:text="NANA'S GREEN TEA"
-                android:textColor="#000000"/>
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
 
 
         </RelativeLayout>
@@ -238,12 +284,16 @@
         android:id="@+id/floorplanbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="165dp"
-        android:text="FLOOR PLAN"
-        android:textColor="#000000"
-        android:layout_above="@+id/nightMarketPic"
+        android:layout_above="@id/participatingShops"
+        android:layout_below="@id/addressText"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="20sp"
+        android:text="Floor Plan"
+        android:textColor="#FFFFFF"
+
         android:onClick="onClickFloorPlan"/>
 
 

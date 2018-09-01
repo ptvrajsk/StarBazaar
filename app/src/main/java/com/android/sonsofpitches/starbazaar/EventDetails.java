@@ -1,13 +1,16 @@
 package com.android.sonsofpitches.starbazaar;
 
 
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import java.net.URI;
 
@@ -21,16 +24,37 @@ public class EventDetails extends AppCompatActivity implements HeaderFragment.He
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
 
+        Typeface quicksandBold = Typeface.createFromAsset(getAssets(), "fonts/font_quicksand_bold.otf");
+
         RelativeLayout eventOverview = findViewById(R.id.eventOverview);
         eventOverview.setBackgroundResource(R.drawable.svg_loginpage_background);
+
         TextView eventDate = this.findViewById(R.id.dateText);
+        TextView eventDateTitle = this.findViewById(R.id.dateMarket);
         TextView eventTime = this.findViewById(R.id.timeText);
+        TextView eventTimeTitle = this.findViewById(R.id.timeMarket);
         TextView eventLocation = this.findViewById(R.id.addressText);
+        TextView eventLocationTitle = this.findViewById(R.id.marketAddress);
+        TextView participants = this.findViewById(R.id.participatingShops);
+
+
+        Button floorPlan = eventOverview.findViewById(R.id.floorplanbutton);
+        floorPlan.setBackgroundResource(R.drawable.individualdetails_floorplanbutton_background);
+        floorPlan.setTypeface(quicksandBold);
+
+        ScrollView participantsList = this.findViewById(R.id.individualEventScrollView);
 
         this.event = this.getIntent().getParcelableExtra("Event");
         eventDate.setText(event.getEventDate());
+        eventDate.setTypeface(quicksandBold);
+        eventDateTitle.setTypeface(quicksandBold);
         eventTime.setText(event.getEventTime());
+        eventTime.setTypeface(quicksandBold);
+        eventTimeTitle.setTypeface(quicksandBold);
         eventLocation.setText(event.getEventLocationFull());
+        eventLocation.setTypeface(quicksandBold);
+        eventLocationTitle.setTypeface(quicksandBold);
+        participants.setTypeface(quicksandBold);
 
     }
     public void onClickGoMaps (View view) {

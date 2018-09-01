@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.widget.CardView;
@@ -41,6 +43,10 @@ public class EventsList_RecyclerViewAdapter extends RecyclerView.Adapter<EventsL
         layoutParams.width = cardWidth;
         layoutParams.height = cardHeight;
         cv.setLayoutParams(layoutParams);
+
+        Typeface quicksandBold = Typeface.createFromAsset(this.mContext.getAssets(), "fonts/font_quicksand_bold.otf");
+        TextView tv = cv.findViewById(R.id.eventLocation);
+        tv.setTypeface(quicksandBold);
 
         TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration((TextView)view.findViewById(R.id.eventLocation), 15, 25, 1, 2);
 
